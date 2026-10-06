@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
 HERE = os.path.dirname(__file__)
-DATA_PATH = os.path.join(HERE, "..", "data", "salary_data.csv")
+DATA_PATH = os.path.join(HERE, "data", "salary_data.csv")
 MODEL_PATH = os.path.join(HERE, "model.joblib")
 SCALER_PATH = os.path.join(HERE, "scaler.joblib")
 METRICS_PATH = os.path.join(HERE, "metrics.json")

@@ -1,27 +1,24 @@
-# ML Combo Project — Supervised & Unsupervised (Ready-to-Run)
+# Salary Prediction with Linear Regression
 
-Two small projects with training scripts and Streamlit apps.
+Predicts salary from years of experience using linear regression, with a small Streamlit app for interactive predictions.
 
-## Projects
-1) **Supervised — Salary Prediction (Linear Regression)**
-   - Predict salary from years of experience.
-   - Files: `supervised/train.py`, `supervised/streamlit_app.py`.
-   - Data: `data/salary_data.csv` (auto-download if missing).
+> **Status:** small machine-learning exercise.
 
-2) **Unsupervised — Customer Segmentation (K-Means)**
-   - Cluster customers using `AnnualIncome` and `SpendingScore`.
-   - Files: `unsupervised/train.py`, `unsupervised/streamlit_app.py`.
-   - Data: `data/mall_customers_sample.csv` (auto-generate if missing).
+## What it does
 
-## Quick Start
+- `train.py` loads `data/salary_data.csv` (downloading a public dataset if missing), splits train/test, scales the feature, fits `LinearRegression` and saves the model plus R², MSE and MAE to `metrics.json`.
+- `streamlit_app.py` shows the metrics and predicts a salary for the years of experience you enter.
+
+## Tech stack
+
+Python · scikit-learn · pandas · Streamlit · joblib
+
+## Run locally
+
 ```bash
-python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
+python -m venv .venv
+.venv\Scripts\activate          # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
-
-# Train
-python supervised/train.py
-python unsupervised/train.py
-
-# Run the apps (use separate terminals or run one-by-one)
-streamlit run supervised/streamlit_app.py
-streamlit run unsupervised/streamlit_app.py
+python train.py
+streamlit run streamlit_app.py
+```
